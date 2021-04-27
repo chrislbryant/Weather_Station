@@ -60,8 +60,7 @@ Rasberry Pi Weather Station
 
 Misc Boxes and Tubing from Lowes
 
-## Picutures
-
+## Camera Parts List
 <!-- <img src="images/Testing_Components.jpg" width="400"><img src="images/BME280.jpg" width="400">
 
 <img src="images/Control_Box.jpg" width="400"><img src="images/Wind_Sensors.jpg" width="400"> -->
@@ -73,7 +72,7 @@ Misc Boxes and Tubing from Lowes
 
 (1) [JMX 3.1 Inch Acrylic Dome](https://www.amazon.com/dp/B012OLS4Q4?psc=1&ref=ppx_yo2_dt_b_product_details)
 
-## Camera Parts List
+## Picutures
 
 
 
