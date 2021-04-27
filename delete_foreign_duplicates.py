@@ -4,10 +4,10 @@ import os
 #----------------------------#
 # Set connection credentials #
 #----------------------------#
-HOST="localhost"
-DB="pi"
-USER="pi"
-PSWD="0623Tiff"
+HOST="****"
+DB="****"
+USER="****"
+PSWD="****"
 
 #-------------------------------------#
 # Get connected and create a 'cursor' #

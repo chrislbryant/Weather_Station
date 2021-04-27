@@ -14,7 +14,7 @@ with open(f"/home/pi/Desktop/logs/camera/cron-{today}_{previous_minute}.log") as
     if "picture_uploaded" in data:
         os.remove(f"/home/pi/Desktop/logs/camera/cron-{today}_{previous_minute}.log")
     else:
-        recipient = "chrislbryant83@gmail.com"
+        recipient = "your email"
         subject = "weatherpi camera"
         content = data
         emailer.sendmail(recipient, subject, content)
@@ -25,7 +25,7 @@ with open(f"/home/pi/Desktop/logs/send_data/cron-{today}_{previous_minute}.log")
     if "data_uploaded" in data:
         os.remove(f"/home/pi/Desktop/logs/send_data/cron-{today}_{previous_minute}.log")
     else:
-        recipient = "chrislbryant83@gmail.com"
+        recipient = "your email"
         subject = "weatherpi data"
         content = data
         emailer.sendmail(recipient, subject, content)

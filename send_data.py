@@ -4,10 +4,10 @@ import requests
 #----------------------------#
 # Set connection credentials #
 #----------------------------#
-HOST="localhost"
-DB="pi"
-USER="pi"
-PSWD="0623Tiff"
+HOST="****"
+DB="****"
+USER="****"
+PSWD="****"
 
 #-------------------------------------#
 # Get connected and create a 'cursor' #
@@ -91,6 +91,10 @@ except (Exception, psycopg2.Error) as error :
     exit()
 connection.close()
 
+#---------------------------#
+# Send Data to Wunderground #
+#---------------------------#
+
 def hpa_to_inches(pressure_in_hpa):
     """ Converts pressure to inches """
     pressure_in_inches_of_m = pressure_in_hpa * 0.02953
@@ -111,7 +115,7 @@ def kmh_to_mph(speed_in_kmh):
 
 WUurl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?"
 WU_station_id = "KNCLANDI10"
-WU_station_pwd = "6mfOi8LE"
+WU_station_pwd = "****"
 WUcreds = "ID=" + WU_station_id + "&PASSWORD=" + WU_station_pwd
 date_str = "&dateutc=now"
 action_str = "&action=updateraw"

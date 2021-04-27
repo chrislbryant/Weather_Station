@@ -14,16 +14,16 @@ camera.close()
 
 gauth = GoogleAuth()
 scope = ["https://www.googleapis.com/auth/drive"]
-gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name("/home/pi/Desktop/Projects/weather_station/JSON_FILE.json", scope)
+gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name("*****", scope)
 drive = GoogleDrive(gauth)
 
 #----------------------------#
 # Set connection credentials #
 #----------------------------#
-HOST="localhost"
-DB="pi"
-USER="pi"
-PSWD="0623Tiff"
+HOST="*****"
+DB="*****"
+USER="*****"
+PSWD="*****"
 
 #-------------------------------------#
 # Get connected and create a 'cursor' #
