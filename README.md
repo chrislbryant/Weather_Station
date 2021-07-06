@@ -81,7 +81,7 @@ Misc Boxes and Tubing from Lowes
 ![Weather Station](/images/Weather_Station.jpg)
 
 ### Control Box
-![Control Box](/images/Control_Box.jpg)
+![Control Box](https://github.com/chrislbryant/Weather_Station/blob/main/images/Contol_Box.jpg)
 
 ### BME280 Temperature, Humidity, and Pressure Sensor
 ![BME280](/images/BME280.jpg)
