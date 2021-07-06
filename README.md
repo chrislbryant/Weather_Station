@@ -4,7 +4,9 @@ This was by far one of my favorite projects! I followed this great [tutorial](ht
 
 After finishing the the initial tutorial, I added a camera, Google Drive file management system, local & cloud Postgres databases connected wtih a FDW, and some scripts to create a daily Time Lapse Video with Audio that is uploaded to Youtube.
 
-(Update 7/5/2021) - The picam is not good enough to take pictures of the sky as originally intended. I will upgrade the camera to the Raspberry Pi High Quality HQ Camera - 12MP later this month. As such there are no Youtube videos yet. I also intend to use machine learning to classify the current weather (sunny, cloudy, rainy, etc) using the camera. Other additions I plan are machine learning to predict weather patterns, a bird camera and machine to classify birds at a bird feeder, and a website to display current weather, predictions, vidoes, and pictures!  
+(Update 7/5/2021) - The picam is not good enough to take pictures of the sky as originally intended. I plan to upgrade the camera to the Raspberry Pi High Quality HQ Camera - 12MP with a 16mm 10MP Telephoto Lens later this month. As such there are no Youtube videos yet (I am still uploading picutres to the cloud as outlined below). I also intend to use machine learning to classify the current weather (sunny, cloudy, rainy, etc) using the camera. Other additions I plan are machine learning to predict weather patterns, a bird camera and machine to classify birds at a bird feeder, and a website to display current weather, predictions, vidoes, and pictures! 
+
+## Check the [weather](https://www.wunderground.com/dashboard/pws/KNCLANDI10)!
 
 ## Weather Station
 Data on Wind Speed, Wind Gust, Wind Direction, Rain, Ambient Temperature, Ground Temperature, Pressure, and Humidity are inserted into a local database every 5 minutes.
