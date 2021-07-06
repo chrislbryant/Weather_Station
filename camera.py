@@ -36,7 +36,6 @@ except (Exception, psycopg2.Error) as error :
 cursor = connection.cursor()
 
 def get_folder_id(title):
-    """ Retrieves current id from DB """
     sql_stmt = f"""
     SELECT {title}
     FROM folders
@@ -58,7 +57,6 @@ def get_folder_id(title):
     return result[0]
 
 def update_folder_id(new_id, title):
-    """ Update current id in DB """
     update_id = (new_id,)
     sql_stmt = f"""
         UPDATE folders
@@ -74,7 +72,6 @@ def update_folder_id(new_id, title):
     connection.commit()
 
 def folders(parent_id):
-    """" Get list of google drive folders """
     folder_list = drive.ListFile({'q':f"mimeType='application/vnd.google-apps.folder' and trashed = false and parents in '{parent_id}'"}).GetList()
     folders = []
     for folder in folder_list:
@@ -87,11 +84,11 @@ def folders(parent_id):
 
 today = datetime.date.today()
 month = datetime.datetime.now().strftime('%B')
-year  = year = datetime.datetime.now().strftime('%Y')
+year  = datetime.datetime.now().strftime('%Y')
 weather_station_folder_id = get_folder_id("weather_station")
-year_folder_id = get_folder_id("year")
-month_folder_id = get_folder_id("month")
-day_folder_id = get_folder_id("day")
+year_folder_id            = get_folder_id("year")
+month_folder_id           = get_folder_id("month")
+day_folder_id             = get_folder_id("day")
 
 if not str(year) in folders(weather_station_folder_id):
     folder = drive.CreateFile({'title' : f"{year}", 'parents': [{'id': f'{weather_station_folder_id}'}] , 

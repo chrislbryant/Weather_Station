@@ -7,17 +7,13 @@ from google.auth.transport.requests import Request
 
 
 def Create_Service(client_secret_file, api_name, api_version, *scopes):
-    print(client_secret_file, api_name, api_version, scopes, sep='-')
     CLIENT_SECRET_FILE = client_secret_file
-    API_SERVICE_NAME = api_name
-    API_VERSION = api_version
-    SCOPES = [scope for scope in scopes[0]]
-    print(SCOPES)
-
+    API_SERVICE_NAME   = api_name
+    API_VERSION        = api_version
+    SCOPES             = [scope for scope in scopes[0]]
+    
     cred = None
-
     pickle_file = f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle'
-    # print(pickle_file)
 
     if os.path.exists(pickle_file):
         with open(pickle_file, 'rb') as token:

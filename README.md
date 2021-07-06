@@ -46,7 +46,7 @@ Rasberry Pi Weather Station
 
 (1) Wind and Rain Sensors [Argent Data Systems](https://www.argentdata.com/catalog/product_info.php?products_id=145) 
 
-(1) Ambient Temperature, Pressure, and Humidity Sensor [BME28](https://www.amazon.com/gp/product/B07P4CWGGK/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
+(1) Ambient Temperature, Pressure, and Humidity Sensor [BME280](https://www.amazon.com/gp/product/B07P4CWGGK/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
 
 (1) Ground Temperature Sensors [DS18B20](https://www.amazon.com/gp/product/B087JQ6MCP/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
@@ -61,9 +61,6 @@ Rasberry Pi Weather Station
 Misc Boxes and Tubing from Lowes
 
 ## Camera Parts List
-<!-- <img src="images/Testing_Components.jpg" width="400"><img src="images/BME280.jpg" width="400">
-
-<img src="images/Control_Box.jpg" width="400"><img src="images/Wind_Sensors.jpg" width="400"> -->
 (1) [Raspberry Pi Camera Module V2](https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS)
 
 (1) [Flex Cable for Raspberry Pi Camera or Display - 2 meters](https://www.adafruit.com/product/2144)
@@ -72,7 +69,22 @@ Misc Boxes and Tubing from Lowes
 
 (1) [JMX 3.1 Inch Acrylic Dome](https://www.amazon.com/dp/B012OLS4Q4?psc=1&ref=ppx_yo2_dt_b_product_details)
 
-## Picutures
+## Weather Station Picutures
+
+### Weather Station Components
+![Testing Components](/images/Testing_Components.jpg)
+
+### Print Out From Functional Weather Station
+![Weather Station Print Out](/images/Weather_Station_Print.png)
+
+### The Weather Station!
+![Weather Station](/images/Weather_Station.jpg)
+
+### Control Box
+![Control Box](/images/Control_Box.jpg)
+
+### BME280 Temperature, Humidity, and Pressure Sensor
+![BME280](/images/BME280.jpg)
 
 
 

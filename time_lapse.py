@@ -19,18 +19,16 @@ gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name("****", sco
 drive = GoogleDrive(gauth)
 
 def get_folder_id(parent_id, timeframe):
-    """" Get list of google drive folders """
     folder_list = drive.ListFile({'q':f"mimeType='application/vnd.google-apps.folder' and trashed = false and parents in '{parent_id}'"}).GetList()
-    folders = []
+    folders     = []
     for folder in folder_list:
         if folder["title"] == str(timeframe):
             folders.append(folder["id"])
     return folders
 
 def folders(parent_id):
-    """" Get list of google drive folders """
     folder_list = drive.ListFile({'q':f"mimeType='application/vnd.google-apps.folder' and trashed = false and parents in '{parent_id}'"}).GetList()
-    folders = []
+    folders     = []
     for folder in folder_list:
         folders.append(folder["title"])
     return folder
@@ -41,7 +39,6 @@ def get_images(google_folder):
         filenames.append(filename)
         file_instance = drive.CreateFile({"id":i["id"] })
         file_instance.GetContentFile(filename)
-    print("Images Downloaded")
 
 def load_images_from_folder(filenames):
     images = []
@@ -55,26 +52,25 @@ def load_images_from_folder(filenames):
             continue
     return images
 
-today = date.today()
+today     = date.today()
 yesterday = today - timedelta(days = 1)
-month = datetime.now().strftime('%B')
-year  = year = datetime.now().strftime('%Y')
-weather_station = "1MyaNd3mV4mDfDDHMqlV7KkOxHD5-9CiN"
-year_folder_id = get_folder_id(weather_station, year)
-print(year_folder_id)
+month     = datetime.now().strftime('%B')
+year      = datetime.now().strftime('%Y')
+weather_station = "**************"
+year_folder_id  = get_folder_id(weather_station, year)
 month_folder_id = get_folder_id(year_folder_id[0], month)
-day_folder_id = get_folder_id(month_folder_id[0], yesterday)
+day_folder_id   = get_folder_id(month_folder_id[0], yesterday)
 
 google_folder = drive.ListFile({'q':f"'{day_folder_id[0]}' in parents and trashed=false"}).GetList()
-filenames = []
+filenames     = []
 
 get_images(google_folder)
-images = load_images_from_folder(filenames)
-number_of_images = len(images)
-frame = images[0]
+images                = load_images_from_folder(filenames)
+number_of_images      = len(images)
+frame                 = images[0]
 height, width, layers = frame.shape
 size = (width,height)
-print("Number of Images: {number_of_images}")
+print(f"Number of Images: {number_of_images}")
 
 select_song = random.choice(os.listdir("/home/scripts/weather_station/music"))
 pydub_song  = AudioSegment.from_mp3(f"/home/scripts/weather_station/music/{select_song}")

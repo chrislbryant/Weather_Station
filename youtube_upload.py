@@ -1,7 +1,6 @@
-import os
 from pydrive2.auth import GoogleAuth, ServiceAccountCredentials
 from pydrive2.drive import GoogleDrive
-from datetime import datetime, date, timedelta
+from datetime import date
 from Google import Create_Service
 from googleapiclient.http import MediaFileUpload
 

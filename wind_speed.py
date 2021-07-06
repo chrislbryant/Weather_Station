@@ -3,22 +3,20 @@ import time
 import math
 import statistics
 
-wind_count = 0 # Counts how many half-rotations
-radius_cm = 9 # Radius of anemometor 
-wind_interval = 5 # How often to report speed
-CM_IN_A_KM = 100000.0
-SECS_IN_AN_HOURS = 3600
-ADJUSTMENT = 1.18
-CONVERT_KM_TO_MPH = 1.609344
-
-store_speeds = []
+wind_count        = 0 
+radius_cm         = 9 
+wind_interval     = 5 
+cm_in_a_km        = 100000.0 # Centimeters in a kilometer
+seconds_in_hours  = 3600
+adjusment         = 1.18 # Adjustment for the loss of wind energy due when arms spin
+convert_km_to_mph = 1.609344
+store_speeds      = []
 
 # Every half-rotation, add 1 to count
 def spin():
     """ Every half-rotation, add 1 to count """
     global wind_count
     wind_count = wind_count + 1
-    #print("spin" + str(wind_count))
 
 def calculate_speed(time_sec):
     """ Calculate wind speed """
@@ -27,12 +25,12 @@ def calculate_speed(time_sec):
     rotations = wind_count / 2.0
 
     # Calculate distance travelled by a cup in cm
-    dist_km = circumference_cm * rotations / CM_IN_A_KM
+    dist_km = circumference_cm * rotations / cm_in_a_km
 
     km_per_sec  = dist_km / time_sec
-    km_per_hour = km_per_sec * SECS_IN_AN_HOURS
+    km_per_hour = km_per_sec * seconds_in_hours
 
-    return (km_per_hour * ADJUSTMENT) / CONVERT_KM_TO_MPH
+    return (km_per_hour * adjusment) / convert_km_to_mph
 
 def reset_wind():
     global wind_count

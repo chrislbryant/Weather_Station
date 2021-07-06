@@ -113,23 +113,21 @@ def kmh_to_mph(speed_in_kmh):
     speed_in_mph = speed_in_kmh * 0.621371
     return speed_in_mph
 
-WUurl = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?"
-WU_station_id = "KNCLANDI10"
+WUurl          = "https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?"
+WU_station_id  = "KNCLANDI10"
 WU_station_pwd = "****"
-WUcreds = "ID=" + WU_station_id + "&PASSWORD=" + WU_station_pwd
-date_str = "&dateutc=now"
-action_str = "&action=updateraw"
+WUcreds        = "ID=" + WU_station_id + "&PASSWORD=" + WU_station_pwd
+date_str       = "&dateutc=now"
+action_str     = "&action=updateraw"
 
-wind_average_str = str(wind_average)
+wind_average_str   = str(wind_average)
 wind_speed_mph_str = "{0:.2f}".format(kmh_to_mph(wind_speed))
-wind_gust_mph_str = "{0:.2f}".format(kmh_to_mph(wind_gust))
-rainfall_in_str = "{0:.2f}".format(mm_to_inches(rainfall))
-humidity_str = "{0:.2f}".format(humidity)
-pressure_str = "{0:.2f}".format(hpa_to_inches(pressure))
-ambient_temp_str = "{0:.2f}".format(degc_to_degf(ambient_temp))
-ground_temp_str = "{0:.2f}".format(degc_to_degf(ground_temp))
-
-#print(wind_average_str, wind_speed_mph_str, wind_gust_mph_str, rainfall_in_str, humidity_str, pressure_str, ambient_temp_str, ground_temp_str)
+wind_gust_mph_str  = "{0:.2f}".format(kmh_to_mph(wind_gust))
+rainfall_in_str    = "{0:.2f}".format(mm_to_inches(rainfall))
+humidity_str       = "{0:.2f}".format(humidity)
+pressure_str       = "{0:.2f}".format(hpa_to_inches(pressure))
+ambient_temp_str   = "{0:.2f}".format(degc_to_degf(ambient_temp))
+ground_temp_str    = "{0:.2f}".format(degc_to_degf(ground_temp))
 
 try:
     r = requests.get(
