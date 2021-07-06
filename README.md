@@ -4,10 +4,12 @@ This was by far one of my favorite projects! I followed this great [tutorial](ht
 
 After finishing the the initial tutorial, I added a camera, Google Drive file management system, local & cloud Postgres databases connected wtih a FDW, and some scripts to create a daily Time Lapse Video with Audio that is uploaded to Youtube.
 
+(Update 7/5/2021) - The picam is not good enough to take pictures of the sky as originally intended. I will upgrade the camera to the Raspberry Pi High Quality HQ Camera - 12MP later this month. As such there are no Youtube videos yet. I also intend to use machine learning to classify the current weather (sunny, cloudy, rainy, etc) using the camera. Other additions I plan are machine learning to predict weather patterns, a bird camera and machine to classify birds at a bird feeder, and a website to display current weather, predictions, vidoes, and pictures!  
+
 ## Weather Station
 Data on Wind Speed, Wind Gust, Wind Direction, Rain, Ambient Temperature, Ground Temperature, Pressure, and Humidity are inserted into a local database every 5 minutes.
 
-1 minute later the data is uploaded to [wunderground](https://www.wunderground.com/dashboard/pws/KNCLANDI10) and a cloud database. Every night the cloud database checks the local data base for missing entries, inserts any missing entries (sometimes the pi loses internet connectivity), and varifies there are no duplicate entries. The databases are connected using a FDW and the script is run via a cronjob that outputs a log file.
+One minute later the data is uploaded to [wunderground](https://www.wunderground.com/dashboard/pws/KNCLANDI10) and a cloud database. Every night the cloud database checks the local data base for missing entries, inserts any missing entries (sometimes the pi loses internet connectivity), and varifies there are no duplicate entries. The databases are connected using a FDW and the script is run via a cronjob that outputs a log file.
 
 ## Camera
 A PiCam takes a picure every 5 minutes and uploads it to the appropriate folder on the Google Drive. The picture file name is the current timestamp. This script is run via a cron job that outputs a log file. The log files are checked by a seperate script once day for errors and an email is sent if issues uploading are are found.
