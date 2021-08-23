@@ -1,10 +1,11 @@
 from gpiozero import MCP3008
 import time
 import math
-adc = MCP3008(channel=0)
-count = 0
+
+adc    = MCP3008(channel=0)
+count  = 0
 values = []
-volts = {0.4: 0.0,
+volts  = {0.4: 0.0,
          1.4: 22.5,
          1.2: 45.0,
          2.8: 67.5,
@@ -26,13 +27,13 @@ def get_average(angles):
     cos_sum = 0.0
 
     for angle in angles:
-        r = math.radians(angle)
+        r 	= math.radians(angle)
         sin_sum += math.sin(r)
         cos_sum += math.cos(r)
 
     flen = float(len(angles))
-    s = sin_sum / flen
-    c = cos_sum / flen
+    s	= sin_sum / flen
+    c 	= cos_sum / flen
     arc = math.degrees(math.atan(s / c))
     average = 0.0
 
@@ -47,6 +48,7 @@ def get_average(angles):
 
 def get_value(length=5):
     data = []
+    #print("Measuring wind direction for %d seconds..." % length)
     start_time = time.time()
 
     while time.time() - start_time <= length:
